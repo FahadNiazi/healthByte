@@ -14,6 +14,15 @@ export const healthCardStyles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#d6d6d6",
     flex: 1,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+
+    elevation: 7,
   },
   heartRate: {
     fontSize: 25,
@@ -53,5 +62,28 @@ export const healthCardStyles = StyleSheet.create({
     fontSize: 16,
     color: "white",
     marginLeft: 6,
+  },
+  textAlign: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 15,
+  },
+  textCenter: {
+    justifyContent: "center",
+  },
+  minHeight: {
+    minHeight: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  margin: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 10,
+  },
+  flex: {
+    flex: 1,
   },
 });

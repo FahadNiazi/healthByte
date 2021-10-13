@@ -8,6 +8,7 @@ import { HealthCard } from "./components/health-card";
 import { SigninMassage } from "./components/signinMassage";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
+import { appStyleSheet } from "./styles";
 const data = [
   {
     header: "Heart Rates",
@@ -75,23 +76,9 @@ export default function App() {
         <AppBar />
         <View style={{ width: "100%", padding: 20 }}>
           <SigninMassage />
-          <ScrollView
-            style={{
-              height: 400,
-              width: "100%",
-              marginTop: 30,
-            }}
-          >
-            <View
-              style={{
-                flex: 1,
-                width: "100%",
-                flexDirection: "row",
-                flexWrap: "wrap",
-                justifyContent: "space-between",
-              }}
-            >
-              {data.map((item, index) => (
+          <ScrollView style={appStyleSheet.width}>
+            <View style={appStyleSheet.textAlign}>
+              {data.map((item) => (
                 <View style={{ width: "49%" }}>
                   <HealthCard {...item} />
                 </View>

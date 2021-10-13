@@ -17,20 +17,13 @@ export const HealthCard = ({
   rangeIcon,
 }) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={healthCardStyles.flex}>
       <View style={healthCardStyles.background}>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: 15,
-          }}
-        >
-          <View style={{ flex: 1 }}>
+        <View style={healthCardStyles.textAlign}>
+          <View style={healthCardStyles.flex}>
             <Text style={healthCardStyles.title}>{header}</Text>
           </View>
-          <View style={{ justifyContent: "center" }}>
+          <View style={healthCardStyles.textCenter}>
             <Feather name="edit-3" size={18} color="black" />
           </View>
         </View>
@@ -39,14 +32,7 @@ export const HealthCard = ({
           <Divider orientation="vertical" width={5} />
         </View>
 
-        <View
-          style={{
-            minHeight: 50,
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "row",
-          }}
-        >
+        <View style={healthCardStyles.minHeight}>
           {showArrow && (
             <View>
               <AntDesign
@@ -78,13 +64,7 @@ export const HealthCard = ({
 
         <View style={healthCardStyles.heartNormalRange}>
           <Text style={healthCardStyles.normalRange}>{range}</Text>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "center",
-              marginTop: 10,
-            }}
-          >
+          <View style={healthCardStyles.margin}>
             <View>
               <AntDesign name={rangeIcon} size={20} color="white" />
             </View>

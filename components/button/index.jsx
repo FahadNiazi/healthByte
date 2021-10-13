@@ -9,16 +9,7 @@ export const Button = ({ icon, name }) => {
       underlayColor="white"
       onPress={() => alert("Add event handler here")}
     >
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          borderColor: "#d6d6d6",
-          borderWidth: 1,
-          marginTop: 10,
-        }}
-      >
+      <View style={buttonStyleSheet.textAlign}>
         <Text>{icon}</Text>
         <Text style={buttonStyleSheet.buttonText}>{name}</Text>
       </View>

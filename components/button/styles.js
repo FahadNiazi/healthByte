@@ -5,4 +5,12 @@ export const buttonStyleSheet = StyleSheet.create({
     fontWeight: "500",
     padding: 15,
   },
+  textAlign: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#d6d6d6",
+    borderWidth: 1,
+    marginTop: 10,
+  },
 });
