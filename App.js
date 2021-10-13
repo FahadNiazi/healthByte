@@ -5,7 +5,7 @@ import { StyleSheet, View } from "react-native";
 import { AppBar } from "./components/appBar";
 import { Button } from "./components/button";
 import { HealthCard } from "./components/health-card";
-import { SigninMassage } from "./components/signinMassage";
+import { SigninMessage } from "./components/signinMessage";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { appStyleSheet } from "./styles";
@@ -75,7 +75,7 @@ export default function App() {
         <StatusBar style="auto" />
         <AppBar />
         <View style={{ width: "100%", padding: 20 }}>
-          <SigninMassage />
+          <SigninMessage />
           <ScrollView style={appStyleSheet.width}>
             <View style={appStyleSheet.textAlign}>
               {data.map((item) => (
