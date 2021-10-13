@@ -11,6 +11,10 @@ export const HealthCard = ({
   range,
   uppervalue,
   rangevalue,
+  up,
+  showArrow,
+  readingColor,
+  rangeIcon,
 }) => {
   return (
     <View style={{ flex: 1 }}>
@@ -19,6 +23,7 @@ export const HealthCard = ({
           style={{
             flexDirection: "row",
             justifyContent: "center",
+            alignItems: "center",
             padding: 15,
           }}
         >
@@ -26,7 +31,7 @@ export const HealthCard = ({
             <Text style={healthCardStyles.title}>{header}</Text>
           </View>
           <View style={{ justifyContent: "center" }}>
-            <Feather name="edit-3" size={24} color="black" />
+            <Feather name="edit-3" size={18} color="black" />
           </View>
         </View>
 
@@ -34,16 +39,40 @@ export const HealthCard = ({
           <Divider orientation="vertical" width={5} />
         </View>
 
-        <View>
-          <View style={{ position: "relative", top: 30, left: 40 }}>
-            <AntDesign name="arrowup" size={24} color="red" />
-          </View>
+        <View
+          style={{
+            minHeight: 50,
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "row",
+          }}
+        >
+          {showArrow && (
+            <View>
+              <AntDesign
+                name={up ? "arrowup" : "arrowdown"}
+                size={24}
+                color={readingColor}
+              />
+            </View>
+          )}
           <View>
-            <Text style={healthCardStyles.heartRate}>{readingresult}</Text>
+            <Text
+              style={{ ...healthCardStyles.heartRate, color: readingColor }}
+            >
+              {readingresult}
+            </Text>
           </View>
 
           <View style={healthCardStyles.position}>
-            <Text style={healthCardStyles.heartRateReading}>{uppervalue}</Text>
+            <Text
+              style={{
+                ...healthCardStyles.heartRateReading,
+                color: readingColor,
+              }}
+            >
+              {uppervalue}
+            </Text>
           </View>
         </View>
 
@@ -57,7 +86,7 @@ export const HealthCard = ({
             }}
           >
             <View>
-              <AntDesign name="heart" size={20} color="white" />
+              <AntDesign name={rangeIcon} size={20} color="white" />
             </View>
             <Text style={healthCardStyles.readingResult}>{rangevalue}</Text>
           </View>

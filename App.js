@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { NativeBaseProvider } from "native-base";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { AppBar } from "./components/appBar";
 import { Button } from "./components/button";
 import { HealthCard } from "./components/health-card";
@@ -15,6 +15,10 @@ const data = [
     rangevalue: "60-70 BMP",
     readingresult: "100",
     uppervalue: "BMP",
+    up: true,
+    showArrow: true,
+    readingColor: "red",
+    rangeIcon: "heart",
   },
   {
     header: "Oxygen Saturation",
@@ -22,6 +26,10 @@ const data = [
     rangevalue: "90-95 %",
     readingresult: "85",
     uppervalue: "%",
+    up: false,
+    showArrow: true,
+    readingColor: "orange",
+    rangeIcon: "message1",
   },
   {
     header: "Blood Pressure",
@@ -29,12 +37,16 @@ const data = [
     rangevalue: "90-120 mm HG",
     readingresult: "90-120 ",
     uppervalue: "mm hg",
+    readingColor: "#00c851",
+    rangeIcon: "dropbox",
   },
   {
     header: "Body Temperature",
     range: "Normal Range",
     rangevalue: "36-38 ℃",
     readingresult: "37.5℃",
+    readingColor: "#00c851",
+    rangeIcon: "barschart",
   },
   {
     header: "Respiration Rates",
@@ -42,6 +54,8 @@ const data = [
     rangevalue: "16 BMP",
     readingresult: "100",
     uppervalue: "BPM",
+    readingColor: "#00c851",
+    rangeIcon: "laptop",
   },
   {
     header: "EKG",
@@ -49,6 +63,8 @@ const data = [
     rangevalue: "36-38 ℃",
     readingresult: "80-100",
     uppervalue: "ms",
+    readingColor: "#00c851",
+    rangeIcon: "barcode",
   },
 ];
 export default function App() {
@@ -63,6 +79,7 @@ export default function App() {
             style={{
               height: 400,
               width: "100%",
+              marginTop: 30,
             }}
           >
             <View
@@ -76,13 +93,7 @@ export default function App() {
             >
               {data.map((item, index) => (
                 <View style={{ width: "49%" }}>
-                  <HealthCard
-                    header={item.header}
-                    range={item.range}
-                    rangevalue={item.rangevalue}
-                    readingresult={item.readingresult}
-                    uppervalue={item.uppervalue}
-                  />
+                  <HealthCard {...item} />
                 </View>
               ))}
             </View>
@@ -94,7 +105,7 @@ export default function App() {
           />
           <Button
             name="Invite pepole to view your vital sign"
-            icon={<Feather name="send" size={24} color="black" />}
+            icon={<Feather name="send" size={22} color="black" />}
           />
         </View>
       </View>

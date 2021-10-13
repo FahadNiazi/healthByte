@@ -5,15 +5,13 @@ export const healthCardStyles = StyleSheet.create({
     fontSize: 13,
     textAlign: "center",
     fontWeight: "bold",
-    marginBottom: 10,
     alignItems: "center",
   },
   background: {
     borderWidth: 1,
     backgroundColor: "white",
-    marginTop: 30,
+    marginTop: 10,
     borderRadius: 10,
-
     borderColor: "#d6d6d6",
     flex: 1,
   },
@@ -21,20 +19,17 @@ export const healthCardStyles = StyleSheet.create({
     fontSize: 25,
     color: "red",
     textAlign: "center",
+    fontWeight: "bold",
   },
   heartRateReading: {
-    fontSize: 10,
+    fontSize: 12,
     color: "red",
     textAlign: "center",
     fontWeight: "900",
   },
   position: {
-    position: "absolute",
-  },
-  position: {
     position: "relative",
-    top: -33,
-    left: 40,
+    top: -13,
   },
   arrowupward: {
     height: 20,
@@ -44,6 +39,8 @@ export const healthCardStyles = StyleSheet.create({
   heartNormalRange: {
     backgroundColor: "#008080",
     padding: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
   normalRange: {
     fontWeight: "500",
